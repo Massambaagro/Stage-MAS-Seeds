@@ -1,0 +1,56 @@
+Résultat questionnaire : 
+
+- Integrité des données 
+	- Revoir l'intégrité des Réserves Utiles 
+	- Inclure les lieux Mexique et Afrique de l'ouest
+
+- Doutes sur la pertinence des scenarios climatiques 
+	- faire un bilan de la pertinence pendant le stage de massamba
+	- revoir les scénarios climatiques régulièrement 
+	- revoir même la sélection des indicateurs les plus impactants régulièrement 
+
+- Possibilité de faire des regroupements de lieux basés sur des données météos 
+	- construire un outil pour faire des PLS et récupérer les VIP généraux/par variété pour chaque indicateur (35 indicateurs de positionnement) - pour stades 4 à 7 - pluriannuel
+	- faire des groupements de lieux basé sur des données brutes aggrégées par lieux également
+	(- Addition des scenarios climatiques à l'outil d'avancement actuel)
+	- Creation d'un outil dédié à l'exploration des résultats en fonction des indicateurs et données météo 
+	(- Re-créer un catalogue lieux qui pourrait aggreger des données météo pluriannuelles par lieux et aider à la construction des réseaux)
+	
+- Rendre les données climatiques plus disponibles 
+	- Application déjà développée à la création de GPE-APC pour consulter les 
+
+- Extra 
+	- automatiser le calcul des gaps 
+	
+ _____________________________________________
+Plan stage :
+
+0 - Tester l'intégrité des données 
+	- regarder les valeurs des réserves utiles
+	- Revoir le bilan hydrique : réserve utile pleine au semis > récupérer l'estimation de la RU via une API?
+
+1 - Tester la pertinence des scenarios climatiques (leur capacité à capturer des effets GxE)
+	- faire un modèle yield ~ genotype + scenario + genotypeXscenario à effets fixes puis une anova pour estimer la significativité de chacun des effets 
+	- faire un modèle yield ~ genotype + scenario + genotypeXscenario à effets random 100% et extraire le component pour chaque effet
+	- faire un modèle avec un effet experiment INSIDE scenario et regarder si cet effet est non significatif (que le ranking dans les essais à l'interieur d'un même scenario est similaire)
+	- comparer les scenarios climatiques à des mega-environnements générés par AMMI
+
+2 - Tester la robustesse des scenarios climatiques 
+	- Repartir du jeu de donnée original et essayer de retomber sur les scenarios climatiques via un nouveau clustering 
+	- Comparer le clustering avec SOM et k-means (voir article Nico)
+	- Ajouter ensuite des données supplémentaires et evaluer la variation du clustering (trouver mesure adaptée qui compte combien de fois des genetiques se retrouvent dans un même cluster)
+	- définir éventuellement une fréquence à laquelle les scenarios climatiques devraient être revus 
+	- Ajouter des lieux Mexique & Afrique de l'ouest à la base de données
+
+3 - proposer des améliorations au système actuel du calcul des scenarios climatiques 
+	- Intégrer modèles de croissance plus complexes
+	- Définir un espace à 3 dimensions stable : eau/temperature/rayonnement pour visualiser systématiquement les nouveaux environnements
+
+4 - Proposer nouvelles utilisations des données climatiques 
+	- tester l'effet des (30) indicateurs individuels sur le rendement via PLSR genre coline (VIP) & Random forest et générer des graphes de comparaison de variétés en conséquence
+	- Proposer un template de powerBI pour analyser les résultats des variétés en fonction des données climatiques
+	(- Proposer la creation d'une appli portain R&D pour télécharger/consulter les données climato) > BCA plutôt que Massamba
+
+
+
+
